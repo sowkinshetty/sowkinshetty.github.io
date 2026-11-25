@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sowkin Shetty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE work: calm, evidence-led, written for a busy hiring manager
+   IDEA an evidence ledger: each capability matched to the roles it serves, with proof
+   PICTURE a capability-by-role matrix; picking a role lights its column and reorders the proof
+   COLOUR white ground, ink #121212, red #e3120b for what matters, slate #2e6f8e, pale #e3ecf0 panels
+   TYPE Source Serif 4 600 + Inter
+   LAYOUT title across the top, matrix full width beneath, figures row; phone: title, role chips, matrix scrolls */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#10191e);--ink:light-dark(#121212,#eef2f4);--muted:light-dark(#555b60,#a9b4ba);--red:light-dark(#e3120b,#ff5a4f);--slate:light-dark(#2e6f8e,#7fb6d1);--panel:light-dark(#e3ecf0,#172630);--line:light-dark(#d3dde2,#2a3a44)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:var(--slate);text-underline-offset:3px}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.015em;margin:0;text-wrap:balance}
+h1{font-size:clamp(40px,6vw,64px)}
+h2{font-size:clamp(28px,3.6vw,40px)}
+h3{font-size:21px}
+p{margin:0 0 12px}
+.band{padding-block:clamp(28px,4vw,60px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:center;padding:10px max(5vw,16px)}
+nav .tab{background:var(--red);color:#fff;font-weight:600;padding:4px 10px;margin-right:auto;text-decoration:none}
+nav a{color:var(--ink);text-decoration:none;font-size:15px;padding:6px 0}
+nav a:hover,nav a:focus-visible{text-decoration:underline}
+.top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:end}
+.lead{font-size:clamp(17px,1.8vw,20px);max-width:36em;margin-top:14px}
+.facts{background:var(--panel);padding:18px 20px;display:grid;gap:8px;font-size:15px}
+.facts div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.facts div:last-child{border:0;padding:0}
+.facts b{font-weight:600;text-align:right}
+.pick{margin-top:clamp(24px,3vw,36px);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pick span{font-weight:600;margin-right:4px}
+.pick button{font:inherit;font-size:15px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.pick button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.pick button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.scroll{overflow-x:auto}
+.mx{width:100%;border-collapse:collapse;margin-top:18px;font-size:15px;min-width:560px}
+.mx th,.mx td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:center}
+.mx th:first-child,.mx td:first-child{text-align:left;width:34%}
+.mx thead th{font-weight:600;font-size:14px;vertical-align:bottom}
+.mx td:first-child a{color:var(--ink);font-weight:500;text-decoration:none}
+.mx td:first-child a:hover{text-decoration:underline}
+.dot{display:inline-block;width:16px;height:16px;border-radius:50%;background:var(--slate)}
+.mx .on{background:color-mix(in srgb,var(--red) 9%,transparent)}
+.mx .on .dot{background:var(--red);transform:scale(1.15)}
+.mx thead .on{color:var(--red)}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(10em,1fr));margin-top:clamp(24px,3vw,36px);border-top:2px solid var(--ink)}
+.figs div{padding:12px 14px 0 0}
+.figs strong{display:block;font-family:"Source Serif 4",serif;font-size:clamp(30px,3.6vw,40px);line-height:1.05}
+.figs span{font-size:14px;color:var(--muted)}
+.sub{color:var(--muted);max-width:46em;margin-top:8px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
+.card{border-top:3px solid var(--slate);background:var(--panel);padding:20px 22px;transition:opacity .25s}
+.card.hit{border-top-color:var(--red)}
+.card.dim{opacity:.5}
+.card .tags{font-size:13px;color:var(--muted);margin-top:6px}
+.card dl{margin:12px 0 0;display:grid;gap:8px}
+.card dt{font-weight:600;font-size:14px}
+.card dd{margin:0}
+@media(prefers-reduced-motion:reduce){.card,.dot{transition:none}}
+.tl{list-style:none;margin:20px 0 0;padding:0}
+.tl li{display:grid;grid-template-columns:11em minmax(0,1fr);gap:20px;padding:18px 0;border-top:1px solid var(--line)}
+.tl .when{font-weight:600;color:var(--muted);font-size:15px}
+.tl .role{font-weight:500;margin:3px 0 8px}
+.tl ul{margin:0;padding-left:18px}
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);margin-top:20px}
+.rows{display:grid;gap:13px}
+.row .lab{display:flex;justify-content:space-between;gap:12px;font-size:15px}
+.row .lab b{white-space:nowrap}
+.bar{height:12px;background:var(--line);margin-top:5px}
+.bar i{display:block;height:100%;background:var(--slate)}
+.row.hi .bar i{background:var(--red)}
+.note{font-size:13px;color:var(--muted);margin-top:12px}
+.extra{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);margin-top:20px}
+.list{list-style:none;margin:0;padding:0}
+.list li{border-top:1px solid var(--line);padding:10px 0}
+.list small{display:block;color:var(--muted);font-size:13px}
+.foot{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:end}
+.links{display:flex;flex-wrap:wrap;gap:10px 22px;font-weight:600;font-size:17px}
+.dark{background:#121212;color:#eef2f4}
+.dark a{color:#ffb4ae}
+.dark .sub{color:#b9c2c7}
+.mail{font-size:18px;font-weight:600;display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+.mail button{font:inherit;font-size:15px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid #eef2f4;background:transparent;color:#eef2f4;cursor:pointer}
+.mail button:focus-visible{outline:3px solid #ffb4ae;outline-offset:2px}
+.mail span{font-size:14px;font-weight:400;color:#b9c2c7}
+.facts a{overflow-wrap:anywhere}
+@media(max-width:760px){.top,.case,.extra,.foot{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.cards{grid-template-columns:minmax(0,1fr)}.tl li{grid-template-columns:minmax(0,1fr);gap:4px}nav a{font-size:14px}.pick button{padding:0 13px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="tab" href="#top">Sowkin Shetty</a><a href="#proof">Proof</a><a href="#experience">Experience</a><a href="#work">Selected work</a><a href="#beyond">Beyond work</a><a href="#contact">Contact</a></div></nav>
+
+<header class="band" id="top">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <h1>Operations, sales and business support, done properly</h1>
+        <p class="lead">I'm Sowkin Shetty. I keep records straight, coordinate people across organisations, and go out and find opportunities. That comes from four years in government administration, operations work at EuroLeague Basketball, and a master's in international management.</p>
+      </div>
+      <div class="facts" aria-label="Practical details">
+        <div><span>Based in</span><b>Barcelona</b></div>
+        <div><span>Work authorisation</span><b>Authorised to work in Spain</b></div>
+        <div><span>Start date</span><b>Available now</b></div>
+        <div><span>Languages</span><b>English (full professional), Hindi (native), Spanish (A2)</b></div>
+        <div><span>Email</span><b><a href="mailto:sowkinshetty@gmail.com">sowkinshetty@gmail.com</a></b></div>
+        <div><span>LinkedIn</span><b><a href="https://www.linkedin.com/in/sowkin-shetty">Sowkin Shetty</a></b></div>
+      </div>
+    </div>
+
+    <div class="pick" role="group" aria-label="Show evidence for a role">
+      <span>Hiring for:</span>
+      <button type="button" id="r-all" data-r="all" aria-pressed="true">Everything</button>
+      <button type="button" id="r-sales" data-r="sales" aria-pressed="false">Sales development</button>
+      <button type="button" id="r-operations" data-r="operations" aria-pressed="false">Operations</button>
+      <button type="button" id="r-admin" data-r="admin" aria-pressed="false">Administration</button>
+      <button type="button" id="r-support" data-r="support" aria-pressed="false">Customer support</button>
+      <button type="button" id="r-research" data-r="research" aria-pressed="false">Research</button>
+      <button type="button" id="r-partnerships" data-r="partnerships" aria-pressed="false">Partnerships</button>
+    </div>
+    <div class="scroll"><table class="mx" id="mx"></table></div>
+
+    <div class="figs">
+      <div><strong>4 years</strong><span>government administration at CBIC</span></div>
+      <div><strong>130+</strong><span>staff records I kept accurate</span></div>
+      <div><strong>1,200+</strong><span>job postings pulled together by a scraper I wrote in Python</span></div>
+      <div><strong>3 of 10</strong><span>cold emails to named contacts that led to a call, a meeting or a CV request</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="band" id="proof" style="background:var(--panel)">
+  <div class="wrap">
+    <h2>What you get, and the proof behind it</h2>
+    <p class="sub">Every point is tied to something I've actually done. Pick a role above and the most relevant points move to the top.</p>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<section class="band" id="experience">
+  <div class="wrap">
+    <h2>Experience and education</h2>
+    <ul class="tl">
+      <li><span class="when">Until Jun 2026</span><div><h3>EuroLeague Basketball, Barcelona</h3><p class="role">Basketball Operations Assistant, Competition team</p><ul><li>Recorded the travel plans clubs submitted, for internal use by EuroLeague stakeholders.</li><li>Turned the season's data into a dashboard of team travel, transport modes and other data points.</li><li>Day-to-day coordination with club staff across Europe.</li></ul></div></li>
+      <li><span class="when">Feb 2020 – Jan 2024</span><div><h3>Central Board of Indirect Taxes and Customs, Pune</h3><p class="role">Tax Assistant, recruited under the Government of India's Meritorious Sports Quota Scheme</p><ul><li>Kept records for 130+ staff and coordinated the Annual General Transfer.</li><li>Handled onboarding, RTI requests, reports, and confidential and vigilance files.</li><li>Helped run office events.</li></ul></div></li>
+      <li><span class="when">Education</span><div><h3>Master's in International Management, Sports Management</h3><p class="role">Geneva Business School, Barcelona</p><p>PGDBA, Symbiosis · BE in Electronics and Instrumentation Engineering, MS Ramaiah Institute of Technology</p></div></li>
+      <li><span class="when">Certifications</span><div><p class="role">Six Sigma Green Belt · Google Project Management · IOC certification</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="work" style="background:var(--panel)">
+  <div class="wrap">
+    <h2>Selected work: should a European league enter India?</h2>
+    <p class="sub">A market-entry case I wrote with Geneva Business School faculty, based on my own survey and interviews.</p>
+    <div class="case">
+      <div>
+        <p>The question was whether EuroLeague Basketball, which has almost no presence in India, should enter the market, and how. I designed and ran a survey of 111 fans and interviewed four senior people from EuroLeague's digital, hospitality and competitions teams and from Indian basketball.</p>
+        <p>I weighed four options: a digital-first launch, partnerships with schools and academies, pilot events, or waiting. The evidence pointed to phased entry: mobile-first, local-language content, built over years rather than around one-off events.</p>
+        <p>The same method works for any market-entry or customer question: get primary data, check it against expert views, and set out the options with their trade-offs.</p>
+      </div>
+      <div>
+        <div class="rows" id="rows"></div>
+        <p class="note">111 respondents, mostly urban and aged 18–34, reached through basketball networks. Shows early-adopter demand; not nationally representative.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="beyond">
+  <div class="wrap">
+    <h2>Beyond work</h2>
+    <div class="extra">
+      <div>
+        <h3>Basketball</h3>
+        <p>I played FIBA 3x3 professionally and was India's #1 ranked 3x3 player in 2019, with a FIBA 3x3 World Tour appearance in 2018. I still play competitively in Barcelona. It's where I learned to train on a schedule, take coaching and stay calm under pressure.</p>
+        <ul class="list" id="vids"></ul>
+      </div>
+      <div>
+        <h3>Writing</h3>
+        <p>I run <a href="https://www.businessinbasketball.com/">Business IN Basketball</a>, a weekly newsletter on media rights, sponsorship, ownership and league strategy. Recent issues:</p>
+        <ul class="list" id="posts"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="band dark" id="contact">
+  <div class="wrap foot">
+    <div>
+      <h2>Let's talk</h2>
+      <p class="sub">Barcelona-based, authorised to work in Spain, and able to start straight away. Email me or message me on LinkedIn.</p>
+      <p class="mail"><a href="mailto:sowkinshetty@gmail.com">sowkinshetty@gmail.com</a> <button type="button" id="copy">Copy email</button> <span id="copied" aria-live="polite"></span></p>
+    </div>
+    <div class="links">
+      <a href="mailto:sowkinshetty@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/sowkin-shetty">LinkedIn</a>
+      <a href="https://www.businessinbasketball.com/">Newsletter</a>
+      <a href="https://play.fiba3x3.com/players/dcd77fd7-293c-498e-aa14-34bcfc454e41/activity">FIBA 3x3</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+{
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const roles=[["sales","Sales"],["operations","Ops"],["admin","Admin"],["support","Support"],["research","Research"],["partnerships","Partners"]];
+const caps=[
+ {id:"records",t:"Organised, accurate records",r:["operations","admin","support"],
+  p:"Four years keeping records for 130+ staff at CBIC, including confidential and vigilance files. At EuroLeague, I recorded the travel plans every club submitted.",
+  y:"Nothing falls through the cracks, and confidential information is handled with discretion."},
+ {id:"coord",t:"Coordination and clear communication",r:["operations","admin","support","partnerships","sales"],
+  p:"I coordinated with club staff across Europe at EuroLeague, and ran onboarding, RTI requests from the public and the Annual General Transfer at CBIC. I work in English and Hindi, with Spanish at A2.",
+  y:"A reliable point of contact who keeps several parties aligned and replies in writing that's clear the first time."},
+ {id:"prospect",t:"Prospecting and outreach",r:["sales","partnerships"],
+  p:"I run my own job search like a sales pipeline: research the account, find the named decision-maker, write a personal email, follow up. In two days in October 2026, 10 cold emails led to a booked call, a coffee meeting and a request for my CV.",
+  y:"Someone who already does the core of an SDR's day (research, personal openers, follow-up) before day one."},
+ {id:"data",t:"Data and tools",r:["operations","research","sales","admin"],
+  p:"I turned a season of EuroLeague travel data into a dashboard. I wrote a Python scraper that pulls 1,200+ job postings from several sources into one list. My first degree is in engineering.",
+  y:"Repetitive work gets automated, and reports arrive as something people can actually read."},
+ {id:"research",t:"Research and analysis",r:["research","partnerships","sales"],
+  p:"I wrote a market-entry case with GBS faculty, built on a 111-person survey and four senior interviews. I also research and write a weekly newsletter on the business of basketball.",
+  y:"Questions get answered with evidence, and findings come with options and trade-offs, not just facts."},
+ {id:"process",t:"Process and project discipline",r:["operations","admin","support"],
+  p:"Six Sigma Green Belt and Google Project Management certified, plus a PGDBA. At CBIC I worked inside strict government procedures and deadlines for four years.",
+  y:"Work that follows the process, hits the deadline, and gets a little better each time it's done."}
+];
+const mx=document.getElementById('mx'),cards=document.getElementById('cards');
+const draw=r=>{
+  mx.innerHTML=`<thead><tr><th>Capability</th>${roles.map(([k,l])=>`<th class="${r===k?'on':''}">${esc(l)}</th>`).join('')}</tr></thead><tbody>${caps.map(c=>`<tr><td><a href="#cap-${c.id}">${esc(c.t)}</a></td>${roles.map(([k])=>`<td class="${r===k?'on':''}">${c.r.includes(k)?'<span class="dot" aria-label="yes"></span>':''}</td>`).join('')}</tr>`).join('')}</tbody>`;
+  const list=r==='all'?caps:[...caps.filter(c=>c.r.includes(r)),...caps.filter(c=>!c.r.includes(r))];
+  cards.innerHTML=list.map(c=>{const hit=r!=='all'&&c.r.includes(r),dim=r!=='all'&&!hit;return `<article class="card${hit?' hit':''}${dim?' dim':''}" id="cap-${c.id}"><h3>${esc(c.t)}</h3><p class="tags">Useful for: ${c.r.map(k=>esc(roles.find(x=>x[0]===k)[1])).join(', ')}</p><dl><dt>Proof</dt><dd>${esc(c.p)}</dd><dt>What it means for you</dt><dd>${esc(c.y)}</dd></dl></article>`}).join('');
+  document.querySelectorAll('.pick button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.r===r)));
+};
+const valid=['all',...roles.map(x=>x[0])];
+const fromHash=()=>{const h=location.hash.slice(1);return valid.includes(h)?h:'all'};
+document.querySelectorAll('.pick button').forEach(b=>b.addEventListener('click',()=>{const r=b.dataset.r;draw(r);try{history.replaceState(null,'',r==='all'?'#top':'#'+r)}catch(e){}}));
+window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(valid.includes(h))draw(h)});
+draw(fromHash());
+
+const rows=[["Follow basketball regularly or occasionally",85,1],["Likely to watch if it were on TV or streaming",83,1],["Would be more interested with Indian players or coaches",69,0],["Would attend a reasonably priced match nearby",62,0],["Had already heard of EuroLeague",43,0]];
+document.getElementById('rows').innerHTML=rows.map(([l,v,h])=>`<div class="row${h?' hi':''}"><div class="lab"><span>${esc(l)}</span><b>${v}%</b></div><div class="bar"><i style="width:${v}%"></i></div></div>`).join('');
+
+const vids=[["3BL Season 2019 mixtape","https://youtu.be/vMVXecGtCnc","Video, 3BL"],["FIBA 3x3 World Tour Hyderabad Masters 2018","https://youtu.be/bnVQicipF_s","Video, 3BL"],["Dunking Shetty!","https://youtube.com/shorts/elsYwlx3LSA","Short, SportVot"]];
+document.getElementById('vids').innerHTML=vids.map(([t,u,s])=>`<li><a href="${esc(u)}">${esc(t)}</a><small>${esc(s)}</small></li>`).join('');
+
+const posts=[["NBA Players Who Own European Basketball Clubs: Hart, Shaq, Rubio, Dončić and Why Now","https://www.businessinbasketball.com/p/nba-players-who-own-european-basketball-clubs-hart-shaq-rubio-don-i-and-why-now","18 Nov 2026"],["Basketball Africa League Franchise Sale: Bids, Rwanda Scrutiny and What Comes Next","https://www.businessinbasketball.com/p/basketball-africa-league-franchise-sale-bids-rwanda-scrutiny-and-what-comes-next","3 Nov 2026"],["The NBA's Global Ledger","https://www.businessinbasketball.com/p/the-nba-s-global-ledger","5 Oct 2026"]];
+document.getElementById('copy').addEventListener('click',async()=>{const o=document.getElementById('copied');try{await navigator.clipboard.writeText('sowkinshetty@gmail.com');o.textContent='Copied'}catch(e){o.textContent='Select the address to copy it'}});
+document.getElementById('posts').innerHTML=posts.map(([t,u,d])=>`<li><a href="${esc(u)}">${esc(t)}</a><small>${esc(d)}</small></li>`).join('');
+}
+</script>
+</body>
+</html>
