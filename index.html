@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sowkin Shetty | Sport · Operations · India ↔ Europe</title>
-<meta name="description" content="Former India No. 1 FIBA 3x3 player, EuroLeague Basketball operations, four years in government administration. Based in Barcelona.">
+<meta name="description" content="Former India No. 1 FIBA 3x3 player, EuroLeague Basketball operations, four years in a government office. Based in Barcelona.">
 <meta property="og:title" content="Sowkin Shetty | Sport · Operations · India ↔ Europe">
 <meta property="og:description" content="From India's No. 1 3x3 player to EuroLeague operations. Based in Barcelona, available now.">
 <meta property="og:image" content="https://sowkinshetty.github.io/assets/img/og.jpg">
@@ -141,6 +141,30 @@ nav a .n{color:var(--wood);font-size:11px;margin-right:4px;font-weight:700}
 .fact dd{font-weight:600;margin-top:2px}
 @media(max-width:860px){.agrid{grid-template-columns:1fr}.agrid figure{position:static;max-width:420px}}
 
+/* journey */
+.journey{margin-top:90px}
+.journey h3{font-size:clamp(28px,3.4vw,42px);margin-bottom:8px}
+.journey .sub{color:var(--mute-d);margin-bottom:34px}
+.route{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;list-style:none}
+.route:before,.route .fill{content:"";position:absolute;left:0;right:0;top:15px;height:3px;background:#d6cdbf;border-radius:3px}
+.route .fill{background:var(--wood);transform-origin:left;transform:scaleX(0);transition:transform 2.2s cubic-bezier(.6,.1,.2,1)}
+.route.in .fill{transform:scaleX(1)}
+.stop{position:relative;padding-top:42px}
+.stop:before{content:"";position:absolute;top:5px;left:0;width:23px;height:23px;border-radius:50%;background:var(--paper);border:3px solid #d6cdbf;transition:border-color .4s, background .4s}
+.route.in .stop:before{border-color:var(--wood);background:#fff}
+.route.in .stop:last-child:before{background:var(--wood);box-shadow:0 0 0 6px rgba(224,120,42,.2)}
+.route.in .stop:nth-child(3):before{transition-delay:.45s}.route.in .stop:nth-child(4):before{transition-delay:.9s}
+.route.in .stop:nth-child(5):before{transition-delay:1.35s}.route.in .stop:nth-child(6):before{transition-delay:1.8s}
+.stop .yr{font-size:12px;font-weight:700;letter-spacing:.12em;color:#b65a14;text-transform:uppercase}
+.stop h4{font-stretch:75%;font-weight:850;font-size:26px;text-transform:uppercase;line-height:1;margin:6px 0}
+.stop p{font-size:14px;color:#4a4740}
+@media(max-width:760px){
+ .route{grid-template-columns:1fr;gap:0;padding-left:40px}
+ .route:before,.route .fill{left:10px;right:auto;top:0;bottom:0;width:3px;height:auto}
+ .route .fill{transform:scaleY(0);transform-origin:top}.route.in .fill{transform:scaleY(1)}
+ .stop{padding:0 0 26px}.stop:before{left:-41px;top:0}
+}
+
 /* experience */
 .tl{position:relative;padding-left:34px}
 .tl:before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--wood),var(--line))}
@@ -234,7 +258,6 @@ html[data-view=business] #court{order:10}
 html[data-view=business] #contact{order:11}
 html[data-view=business] .reel,html[data-view=business] .clips{display:none}
 html[data-view=business] .gallery{padding-top:110px}
-html[data-view=business] .work .wk:last-child{grid-column:span 12}
 @media(max-width:820px){.vsw{margin-left:0}}
 
 /* reveal */
@@ -269,13 +292,14 @@ html[data-view=business] .work .wk:last-child{grid-column:span 12}
 <section class="hero">
   <div class="wrap hgrid">
     <div>
-      <div class="kicker rv"><span class="v-sport">Sport · Operations · India ↔ Europe</span><span class="v-biz">Operations · Administration · Sales</span></div>
+      <div class="kicker rv"><span class="v-sport">Sport · Operations · India ↔ Europe</span><span class="v-biz">Business · Sales · Partnerships</span></div>
       <h1 class="display rv v-sport">From India's <em>No.&nbsp;1</em> in 3x3 to EuroLeague operations.</h1>
-      <h1 class="display rv v-biz">Records right. People informed. <em>Work done.</em></h1>
-      <p class="lede rv v-sport">I'm Sowkin. Four years in government administration, a season with EuroLeague Basketball in Barcelona, a master's in sports management, and a career on court before all of it. I bring structure to busy operations, and I know the Indian sports market first-hand.</p>
-      <p class="lede rv v-biz">I'm Sowkin. I spent four years running administration for 130+ staff in a government office, then joined EuroLeague Basketball's operations team in Barcelona. I keep records accurate, deadlines met and people in the loop, and I'm comfortable writing to people I've never met and turning that into a conversation.</p>
+      <h1 class="display rv v-biz">Organised. Data-minded. <em>Ready to start.</em></h1>
+      <p class="lede rv v-sport">I'm Sowkin. Four years in a government office, a season with EuroLeague Basketball in Barcelona, a master's in sports management, and a career on court before all of it. I bring structure to busy operations, and I know the Indian sports market first-hand.</p>
+      <p class="lede rv v-biz">I'm Sowkin. I spent four years managing records and processes for 130+ staff in a government office, then joined EuroLeague Basketball's operations team in Barcelona. I keep records accurate, deadlines met and people in the loop, and I'm happy working in English, Hindi or Spanish.</p>
       <div class="cta rv">
         <a class="btn primary" href="mailto:sowkinshetty@gmail.com">Email me →</a>
+        <a class="btn" href="assets/Sowkin_Shetty_CV.pdf" target="_blank" rel="noopener">Download CV</a>
         <a class="btn" href="https://www.linkedin.com/in/sowkin-shetty" target="_blank" rel="noopener">LinkedIn</a>
       </div>
       <div class="status rv">
@@ -296,14 +320,14 @@ html[data-view=business] .work .wk:last-child{grid-column:span 12}
   <div class="wrap">
     <div class="pbhead rv">
       <h2 class="display">The playbook</h2>
-      <p>Short on time? Tap a play for the 20-second version, or scroll for the full story.</p>
+      <p>Short on time? Tap any of the four cards below for a 20-second summary, or keep scrolling for the full story.</p>
     </div>
     <div class="court rv">
       <div class="plays">
-        <button class="play" data-k="about"><span class="num">01</span><span class="t">About me</span><span class="s">Who I am and what I'm looking for</span><span class="go">Quick look →</span></button>
-        <button class="play" data-k="experience"><span class="num">02</span><span class="t">Experience</span><span class="s">EuroLeague, CBIC and education</span><span class="go">Quick look →</span></button>
-        <button class="play" data-k="court"><span class="num">03</span><span class="t"><span class="v-sport">On court</span><span class="v-biz">Beyond work</span></span><span class="s"><span class="v-sport">India No. 1, FIBA 3x3, Club Claret</span><span class="v-biz">Competitive basketball, India to Barcelona</span></span><span class="go">Quick look →</span></button>
-        <button class="play" data-k="work"><span class="num">04</span><span class="t">Work</span><span class="s"><span class="v-sport">Case study, tools and writing</span><span class="v-biz">Outreach, tools, research and writing</span></span><span class="go">Quick look →</span></button>
+        <button class="play" data-k="about"><span class="num">01</span><span class="t">About me</span><span class="s">Who I am and what I'm looking for</span><span class="go">Tap for a quick look →</span></button>
+        <button class="play" data-k="experience"><span class="num">02</span><span class="t">Experience</span><span class="s">EuroLeague, internships, CBIC and education</span><span class="go">Tap for a quick look →</span></button>
+        <button class="play" data-k="court"><span class="num">03</span><span class="t"><span class="v-sport">On court</span><span class="v-biz">Beyond work</span></span><span class="s"><span class="v-sport">India No. 1, FIBA 3x3, Club Claret</span><span class="v-biz">Competitive basketball, India to Barcelona</span></span><span class="go">Tap for a quick look →</span></button>
+        <button class="play" data-k="work"><span class="num">04</span><span class="t">Work</span><span class="s"><span class="v-sport">Case study, tools and writing</span><span class="v-biz">Tools, research and writing</span></span><span class="go">Tap for a quick look →</span></button>
       </div>
     </div>
   </div>
@@ -312,10 +336,10 @@ html[data-view=business] .work .wk:last-child{grid-column:span 12}
 <section class="proof" aria-label="Proof in numbers">
   <div class="wrap stats">
     <div class="stat rv v-sport"><div class="v"><i>#</i><span data-count="1">1</span></div><div class="l">India's ranked FIBA 3x3 player, 2019</div></div>
-    <div class="stat rv v-biz"><div class="v"><span data-count="3">3</span><i>/10</i></div><div class="l">cold emails to named contacts that led to a call, meeting or CV request</div></div>
-    <div class="stat rv"><div class="v"><span data-count="4">4</span></div><div class="l">years in government administration at CBIC</div></div>
+    <div class="stat rv v-biz"><div class="v"><span data-count="3">3</span></div><div class="l">working languages: English, Hindi and Spanish</div></div>
+    <div class="stat rv"><div class="v"><span data-count="4">4</span></div><div class="l">years at CBIC, a government office</div></div>
     <div class="stat rv"><div class="v"><span data-count="130">130</span><i>+</i></div><div class="l">staff records kept accurate</div></div>
-    <div class="stat rv"><div class="v"><span data-count="111">111</span></div><div class="l">fans surveyed for my EuroLeague India study</div></div>
+    <div class="stat rv"><div class="v"><span data-count="111">111</span></div><div class="l">fans surveyed for the EuroLeague India study</div></div>
     <div class="stat rv"><div class="v"><span data-count="1200">1,200</span><i>+</i></div><div class="l">job postings collected by my scraper</div></div>
   </div>
 </section>
@@ -329,10 +353,10 @@ html[data-view=business] .work .wk:last-child{grid-column:span 12}
       <div class="about">
         <p class="big rv v-biz">In a government office, a wrong record or a missed deadline is somebody's career. I spent four years making sure <b>neither happened</b>, for 130+ people.</p>
         <p class="rv v-biz">At the Central Board of Indirect Taxes and Customs in Pune, I kept service records, coordinated the annual staff transfer process, onboarded new joiners and handled RTI requests and confidential files. At EuroLeague Basketball I recorded data from clubs across Europe and coordinated with their staff day to day. I also hold a master's in international management, a Six Sigma Green Belt and the Google Project Management certificate.</p>
-        <p class="rv v-biz">I'm looking for roles in operations, administration, sales development, customer support and research, in any industry. Before all this I played basketball competitively, which is where the discipline comes from.</p>
+        <p class="rv v-biz">I'm looking for my next role in business, sales, partnerships or operations, in any industry. Before all this I played basketball competitively, which is where the discipline comes from.</p>
         <p class="big rv v-sport">Sport gave me discipline. Government work taught me <b>process and paperwork that has to be right</b>. EuroLeague showed me how a top competition runs day to day.</p>
         <p class="rv v-sport">I was India's No. 1 ranked FIBA 3x3 player in 2019, and I was recruited into the Central Board of Indirect Taxes and Customs under the government's sports quota. I spent four years there keeping records for 130+ staff, coordinating annual transfers and handling RTI requests and confidential files. Then I moved to Barcelona for a master's in sports management and a role on EuroLeague's Competition team.</p>
-        <p class="rv v-sport">I'm open to operations, administration, sales development, partnerships, research and customer-facing roles, in sport and beyond. I also write a weekly newsletter on the business of basketball.</p>
+        <p class="rv v-sport">I'm open to roles in operations, business, sales and partnerships, in sport and beyond. I also write a weekly newsletter on the business of basketball.</p>
         <dl class="facts rv">
           <div class="fact"><dt>Based in</dt><dd>Barcelona, Spain</dd></div>
           <div class="fact"><dt>Availability</dt><dd>Immediately</dd></div>
@@ -340,6 +364,18 @@ html[data-view=business] .work .wk:last-child{grid-column:span 12}
           <div class="fact"><dt>Languages</dt><dd>English (full professional) · Hindi (native) · Spanish (intermediate)</dd></div>
         </dl>
       </div>
+    </div>
+    <div class="journey">
+      <h3 class="display rv">The route so far</h3>
+      <p class="sub rv">From my hometown to Barcelona, by way of a lot of basketball courts.</p>
+      <ol class="route" id="route">
+        <span class="fill" aria-hidden="true"></span>
+        <li class="stop"><div class="yr">Home</div><h4>Mangalore</h4><p>My hometown, where it all started.</p></li>
+        <li class="stop"><div class="yr">2014 – 2018</div><h4>Bangalore</h4><p>BE in Electronics &amp; Instrumentation at MS Ramaiah Institute of Technology.</p></li>
+        <li class="stop"><div class="yr">2018 – 2020</div><h4>Across India</h4><p>Playing basketball full time around the country. FIBA 3x3 World Tour in 2018, India's No. 1 in 2019.</p></li>
+        <li class="stop"><div class="yr">2020 – 2024</div><h4>Pune</h4><p>Four years at the Central Board of Indirect Taxes and Customs.</p></li>
+        <li class="stop"><div class="yr">2024 – now</div><h4>Barcelona</h4><p>Master's at Geneva Business School, then EuroLeague Basketball. Playing for Club Claret.</p></li>
+      </ol>
     </div>
   </div>
 </section>
@@ -350,18 +386,36 @@ html[data-view=business] .work .wk:last-child{grid-column:span 12}
     <div class="chead rv"><div class="cnum" aria-hidden="true">02</div><div><div class="kicker">Experience</div><h2 class="display">Where I've worked</h2></div></div>
     <div class="tl">
       <article class="job rv">
-        <div class="when">Until June 2026 · Barcelona</div>
+        <div class="when">Oct 2025 – Jun 2026 · Barcelona</div>
         <h3>EuroLeague Basketball</h3>
         <div class="role">Basketball Operations Assistant · Competition team</div>
         <ul>
           <li>Recorded the travel plans submitted by clubs, for internal use by EuroLeague stakeholders in future decision-making.</li>
-          <li>Worked with the season's data as it became a dashboard of team travel, transport modes and other data points.</li>
+          <li>Collected and prepared the travel data behind a season-end dashboard of team travel and transport modes, built by the BI team.</li>
           <li>Coordinated day to day with club staff across Europe.</li>
         </ul>
         <div class="jobpics">
           <figure><img width="1171" height="1563" src="assets/img/el-team.jpg" alt="Group photo on a EuroLeague court with the trophy" loading="lazy"><span class="cap">On court with EuroLeague colleagues</span></figure>
           <figure><img width="1600" height="2133" src="assets/img/el-desk.jpg" alt="Sowkin at the EuroLeague Basketball reception" loading="lazy"><span class="cap">EuroLeague HQ, Barcelona</span></figure>
         </div>
+      </article>
+      <article class="job rv">
+        <div class="when">Aug 2025 – Oct 2025 · Remote</div>
+        <h3>WEvolv</h3>
+        <div class="role">Sports Management Intern · US-based sports SaaS start-up</div>
+        <ul>
+          <li>Helped the two founders set up their platform, adding player and agent data.</li>
+          <li>Interviewed sports agents to understand how they work and what they would need from the product.</li>
+        </ul>
+      </article>
+      <article class="job rv">
+        <div class="when">Sep 2024 – Dec 2024 · New York (Remote)</div>
+        <h3>Dividend Management</h3>
+        <div class="role">Sports Intern · sports agency</div>
+        <ul>
+          <li>Built a dashboard of NBA players ranked by value, to show which players the agency could approach to represent.</li>
+          <li>Reached out to players on the agency's behalf, alongside ad hoc support for the team.</li>
+        </ul>
       </article>
       <article class="job rv">
         <div class="when">Feb 2020 – Jan 2024 · Pune, India</div>
@@ -431,7 +485,7 @@ html[data-view=business] .work .wk:last-child{grid-column:span 12}
         <div>
           <div class="tag">Case study · Market entry</div>
           <h3>Should EuroLeague enter India?</h3>
-          <p>I surveyed fans, interviewed people in the industry and compared four entry options. My recommendation was a phased, mobile-first entry led by local-language content, rather than a big launch.</p>
+          <p>Co-developed with my professors at Geneva Business School. We surveyed fans, interviewed people in the industry and compared four entry options. The recommendation was a phased, mobile-first entry led by local-language content, rather than a big launch.</p>
           <p class="note">The sample captures early-adopter demand, mostly urban fans aged 18–34. It is not nationally representative.</p>
         </div>
         <div class="nums">
@@ -440,12 +494,6 @@ html[data-view=business] .work .wk:last-child{grid-column:span 12}
           <div><b>4</b><span>entry options compared</span></div>
           <div><b>1</b><span>phased, mobile-first plan</span></div>
         </div>
-      </article>
-      <article class="wk half rv v-biz">
-        <div class="tag">Outreach · Prospecting</div>
-        <h3>Cold outreach that gets replies</h3>
-        <p>In my own job search I researched named people at target companies and wrote to each of them directly, rather than to generic inboxes.</p>
-        <ul><li>3 of 10 emails led to a call, a meeting or a request for my CV</li></ul>
       </article>
       <article class="wk half rv">
         <div class="tag">Tool · Python</div>
@@ -456,8 +504,8 @@ html[data-view=business] .work .wk:last-child{grid-column:span 12}
       <article class="wk half rv">
         <div class="tag">Writing · Weekly</div>
         <h3>Business IN Basketball</h3>
-        <p>A weekly newsletter on the business side of the game: media rights, sponsorship, ownership and league strategy.</p>
-        <a class="more" href="https://www.businessinbasketball.com/" target="_blank" rel="noopener">Read the newsletter →</a>
+        <p>My newsletter on the business side of the game: media rights, sponsorship, ownership and league strategy. A new Digest goes out every week.</p>
+        <a class="more" href="https://www.businessinbasketball.com/" target="_blank" rel="noopener">Read the latest Digest →</a>
       </article>
     </div>
   </div>
@@ -468,10 +516,11 @@ html[data-view=business] .work .wk:last-child{grid-column:span 12}
     <div class="kicker rv">Contact</div>
     <h2 class="display rv">Let's talk.</h2>
     <p class="rv v-sport">Hiring for a role in operations, partnerships or anything in sport? Email me or message me on LinkedIn.</p>
-    <p class="rv v-biz">Hiring for operations, administration, sales or customer support? Email me or message me on LinkedIn.</p>
+    <p class="rv v-biz">Hiring for business, sales, partnerships or operations? Email me or message me on LinkedIn.</p>
     <div class="cta rv">
       <a class="btn primary" href="mailto:sowkinshetty@gmail.com">sowkinshetty@gmail.com</a>
       <button class="btn" id="copy">Copy email</button>
+      <a class="btn" href="assets/Sowkin_Shetty_CV.pdf" target="_blank" rel="noopener">Download CV</a>
     </div>
     <div class="links rv">
       <a href="https://www.linkedin.com/in/sowkin-shetty" target="_blank" rel="noopener">LinkedIn</a>
@@ -502,7 +551,7 @@ let view='sport';
 function setView(v,push){
   view=v; document.documentElement.dataset.view=v;
   document.querySelectorAll('.vsw button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v));
-  document.title=v==='business'?'Sowkin Shetty | Operations · Administration · Sales':'Sowkin Shetty | Sport · Operations · India ↔ Europe';
+  document.title=v==='business'?'Sowkin Shetty | Business · Sales · Partnerships':'Sowkin Shetty | Sport · Operations · India ↔ Europe';
   document.querySelectorAll('.rv').forEach(e=>e.classList.add('in'));
   if(push){try{history.replaceState(null,'',v==='business'?'#business':location.pathname)}catch(e){}}
 }
@@ -529,6 +578,7 @@ addEventListener('scroll',onScroll,{passive:true}); onScroll();
 // reveal + count-up
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+io.observe(document.getElementById('route'));
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const cio=new IntersectionObserver(es=>es.forEach(e=>{
   if(!e.isIntersecting)return; const el=e.target,n=+el.dataset.count; cio.unobserve(el);
@@ -539,16 +589,16 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 
 // playbook quick look
 const QB={
- about:{n:'01 · About me',t:'Who I am',img:'assets/img/el-ball.jpg',l:['Based in Barcelona, authorised to work in Spain, available now','Four years of government administration for 130+ staff','Open to operations, admin, sales development, customer support and research roles','English, Hindi, intermediate Spanish']},
- experience:{n:'02 · Experience',t:'Where I\'ve worked',img:'assets/img/el-desk.jpg',l:['CBIC, Pune: Tax Assistant, Feb 2020 – Jan 2024: records, transfers, onboarding, RTI','EuroLeague Basketball: Basketball Operations Assistant, coordinating with club staff','Master\'s in International Management, Six Sigma Green Belt, Google PM']},
+ about:{n:'01 · About me',t:'Who I am',img:'assets/img/el-ball.jpg',l:['Based in Barcelona, authorised to work in Spain, available now','Four years in a government office, records and processes for 130+ staff','Open to roles in business, sales, partnerships and operations','English, Hindi, intermediate Spanish']},
+ experience:{n:'02 · Experience',t:'Where I\'ve worked',img:'assets/img/el-desk.jpg',l:['CBIC, Pune: Tax Assistant, Feb 2020 – Jan 2024: records, transfers, onboarding, RTI','EuroLeague Basketball: Basketball Operations Assistant, coordinating with club staff','Internships at WEvolv and Dividend Management: data and outreach','Master\'s in International Management, Six Sigma Green Belt, Google PM']},
  court:{n:'03 · Beyond work',t:'Competitive basketball',img:'assets/img/claret.jpg',l:['Ranked No. 1 in India in FIBA 3x3, 2019','Plays for Club Claret in Barcelona']},
- work:{n:'04 · Work',t:'Things I\'ve done',img:'assets/img/mbc-podium.jpg',l:['Cold outreach: 3 of 10 emails led to a call, meeting or CV request','Python job scraper, 1,200+ postings','Market-entry case study, 111 fans surveyed','Weekly newsletter on the business of basketball']}
+ work:{n:'04 · Work',t:'Things I\'ve done',img:'assets/img/mbc-podium.jpg',l:['Python job scraper, 1,200+ postings','Market-entry case study with GBS faculty, 111 fans surveyed','Weekly newsletter on the business of basketball']}
 };
 const Q={
- about:{n:'01 · About me',t:'Who I am',img:'assets/img/el-ball.jpg',l:['Based in Barcelona, authorised to work in Spain, available now','Former India No. 1 ranked FIBA 3x3 player (2019)','Open to operations, admin, sales development, partnerships and research roles','English, Hindi, intermediate Spanish']},
- experience:{n:'02 · Experience',t:'Where I\'ve worked',img:'assets/img/el-desk.jpg',l:['EuroLeague Basketball: Basketball Operations Assistant, Competition team','CBIC, Pune: Tax Assistant, Feb 2020 – Jan 2024, records for 130+ staff','Master\'s in Sports Management, Geneva Business School Barcelona']},
+ about:{n:'01 · About me',t:'Who I am',img:'assets/img/el-ball.jpg',l:['Based in Barcelona, authorised to work in Spain, available now','Former India No. 1 ranked FIBA 3x3 player (2019)','Open to roles in operations, business, sales and partnerships','English, Hindi, intermediate Spanish']},
+ experience:{n:'02 · Experience',t:'Where I\'ve worked',img:'assets/img/el-desk.jpg',l:['EuroLeague Basketball: Basketball Operations Assistant, Competition team, Oct 2025 – Jun 2026','Internships at WEvolv (sports SaaS) and Dividend Management (agency)','CBIC, Pune: Tax Assistant, Feb 2020 – Jan 2024, records for 130+ staff','Master\'s in Sports Management, Geneva Business School Barcelona']},
  court:{n:'03 · On court',t:'The basketball side',img:'assets/img/dunk-streetball.jpg',l:['Ranked No. 1 in India in FIBA 3x3, 2019','FIBA 3x3 World Tour appearance, 2018','Plays for Club Claret, Copa Catalunya']},
- work:{n:'04 · Work',t:'Things I\'ve built',img:'assets/img/mbc-podium.jpg',l:['EuroLeague India market-entry case study, 111 fans surveyed','Python job scraper, 1,200+ postings','Business IN Basketball weekly newsletter']}
+ work:{n:'04 · Work',t:'Things I\'ve built',img:'assets/img/mbc-podium.jpg',l:['EuroLeague India market-entry case study with GBS faculty, 111 fans surveyed','Python job scraper, 1,200+ postings','Business IN Basketball weekly newsletter']}
 };
 const modal=document.getElementById('modal'); let lastBtn=null;
 document.querySelectorAll('.play').forEach(b=>b.addEventListener('click',()=>{
